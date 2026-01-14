@@ -2,11 +2,296 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GoToGym Quantum Coach</title>
+
+  <!-- SEO -->
+  <meta name="description" content="GoToGym Quantum Coach es el servicio estrella de GoToGym: coaching consciente basado en ciencia, QAF v2.0 e IA responsable." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #101012;
+      --fg: #E6E6E6;
+      --muted: #A0A0A0;
+      --accent: #0FBFB0;
+      --gold: #D4B46A;
+      --card: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background: radial-gradient(circle at top, #151820, var(--bg));
+      color: var(--fg);
+      line-height: 1.65;
+    }
+
+    /* === Animaciones base === */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* === Layout === */
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 96px 24px;
+      text-align: center;
+    }
+
+    .hero {
+      max-width: 900px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* === CTA === */
+    .cta {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 14px 30px;
+      border-radius: 32px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #1ee3d0);
+      color: #000;
+      box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(15,191,176,0.35);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: var(--fg);
+    }
+
+    /* === Sections === */
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 96px 24px;
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    /* === QAF Grid === */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 32px;
+      transition: all 0.4s ease;
+    }
+
+    .card h3 {
+      color: var(--gold);
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 32px rgba(15,191,176,0.12);
+      transform: translateY(-4px);
+    }
+
+    /* === Transition block === */
+    .transition {
+      text-align: center;
+      font-size: 1.4rem;
+      color: var(--muted);
+    }
+
+    .transition span {
+      display: block;
+      color: var(--gold);
+      font-size: 1.6rem;
+      margin: 12px 0;
+    }
+
+    /* === Footer === */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 48px 24px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--muted);
+      margin: 0 10px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+  </style>
 </head>
+
 <body>
-  <h1>GoToGym Quantum Coach</h1>
-  <p>Site initializing…</p>
+
+  <!-- HERO -->
+  <header>
+    <div class="hero">
+      <h1 class="reveal">Claridad. Energía. Decisiones conscientes.</h1>
+      <p class="reveal">
+        GoToGym evoluciona. De sportswear a un sistema de coaching inteligente
+        basado en ciencia, ética e inteligencia artificial responsable.
+      </p>
+
+      <div class="cta reveal">
+        <a href="https://bit.ly/gotogymquantumcoach" target="_blank" class="btn btn-primary">
+          Probar el Quantum Coach
+        </a>
+        <a href="#qaf" class="btn btn-secondary">Cómo funciona</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- TRANSICIÓN -->
+  <section class="reveal transition">
+    GoToGym Sportwear
+    <span>↓</span>
+    GoToGym Quantum Coach
+  </section>
+
+  <!-- QUÉ ES -->
+  <section class="reveal">
+    <h2>¿Qué es Quantum Coach?</h2>
+    <p>
+      Es el servicio estrella de GoToGym. Un sistema de acompañamiento
+      que integra física, cognición, sistemas dinámicos y gobernanza
+      para ayudarte a comprender tu estado interno y tomar mejores decisiones.
+      <br><br>
+      No diagnostica. No juzga. No sustituye profesionales.
+    </p>
+  </section>
+
+  <!-- QAF -->
+  <section id="qaf" class="reveal">
+    <h2>Motor QAF v2.0</h2>
+
+    <div class="grid">
+      <div class="card reveal">
+        <h3>I — Física / Estructura</h3>
+        <p>Ordena energía, límites y contexto del sistema humano.</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>II — Sistemas Dinámicos</h3>
+        <p>Modela la evolución no lineal del bienestar.</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>III — Umbrales Críticos</h3>
+        <p>Detecta puntos de quiebre y transiciones de régimen.</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>IV — Coherencia Cognitiva</h3>
+        <p>Minimiza incertidumbre y entropía informacional.</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>V — Gobernanza Humano–IA</h3>
+        <p>Equilibrios responsables y validación ética.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÉTICA -->
+  <section class="reveal">
+    <h2>Uso responsable y ética</h2>
+    <p>
+      Quantum Coach está diseñado bajo principios de transparencia,
+      privacidad y colaboración humano–IA.
+      <br><br>
+      La tecnología amplifica la claridad humana, no la reemplaza.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="reveal">
+    <p>© 2026 GoToGym — Wear the Intelligence</p>
+    <div>
+      <a href="https://instagram.com/gotogym.sportwear" target="_blank">Instagram</a>
+      <a href="https://twitter.com/GOTOGYM6" target="_blank">Twitter</a>
+      <a href="https://www.linkedin.com/company/33262154/" target="_blank">LinkedIn</a>
+      <a href="https://soundcloud.com/go-to-gym-sportswear-as-a-service" target="_blank">SoundCloud</a>
+    </div>
+  </footer>
+
+  <!-- JS: Reveal on scroll -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
 </body>
 </html>
-
